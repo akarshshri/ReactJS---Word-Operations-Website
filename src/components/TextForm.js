@@ -5,7 +5,7 @@ export default function TextForm(props) {
     const [text, settext] = useState('');
     
     var unaftext;
-    
+    var wordCount = text.replace(/\s{2,}/g, ' ').trim().split(" ").filter(n => n).length;
 
     const handletoUpper = ()=>{
         unaftext = text;
@@ -39,12 +39,15 @@ export default function TextForm(props) {
         
     }
 
+  
     const nochange = ()=>{
         //console.log("OnChange!");
         //settext(event.target.value)
     }
 
+ 
 
+    
 
 
     return (
@@ -60,7 +63,7 @@ export default function TextForm(props) {
                 <label className="form-label">{props.formOutputTitle}</label>
                 <textarea className="form-control" id="exampleFormControlTextarea1" rows="8" placeholder='Result' value={text} onChange={nochange}></textarea>
                 <h3>Number of characters: {text.length}</h3>
-                <h3>Number of words: {text.trim(" ").split(" ").length}</h3>
+                <h3>Number of words: {wordCount}</h3>
             </div>
         </>
     )
