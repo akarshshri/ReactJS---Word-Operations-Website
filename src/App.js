@@ -7,7 +7,7 @@ function App() {
   return(
   <>
     <Navbar title="Website" />
-    <TextForm formTitle="Input Text Below"/>
+    <TextForm formInputTitle="Input Text Below" formOutputTitle="Result Below:" />
   </>
   )
 }
