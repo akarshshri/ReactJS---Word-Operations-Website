@@ -29,6 +29,14 @@ export default function TextForm(props) {
         settext('')
         let elem = document.getElementById('exampleFormControlTextarea1');        
         elem.value="";
+        elem = document.getElementById('exampleFormControlTextarea2');  
+        elem.value="";
+    }
+
+    const handleExSpaces = ()=>{
+        unaftext = text;
+        //console.log(unaftext);
+        settext(text.replace(/\s+/g,' ').trim());
     }
 
     const handleonChange = (event)=>{
@@ -40,12 +48,13 @@ export default function TextForm(props) {
     }
 
     const handleCopy = ()=>{
-        copiedtext = document.getElementById('exampleFormControlTextarea1');
+        //copiedtext = document.getElementById('exampleFormControlTextarea1');
+        copiedtext = document.getElementById('exampleFormControlTextarea2');
         copiedtext = copiedtext.select();
         document.execCommand('copy');
+        props.showAlert('Copied Successfully!','success');
         
-        
-        //console.log(text);
+        console.log(props.alert);
         
     }
     
@@ -64,12 +73,13 @@ export default function TextForm(props) {
                 <textarea className="form-control"  rows="8" placeholder='Enter Text Here...' value={unaftext} onChange={handleonChange} id="exampleFormControlTextarea1"></textarea>
                 <button className="btn btn-primary mt-3 mx-2" onClick={handletoUpper}>Click to UpperCase</button>
                 <button className="btn btn-primary mt-3 mx-2" onClick={handletoLower}>Click to LowerCase</button>
+                <button className="btn btn-primary mt-3 mx-2" onClick={handleExSpaces}>Remove Extra Spaces</button>
                 <button className="btn btn-success mt-3 mx-2" onClick={handleCopy}>Click to Copy</button>
                 <button className="btn btn-danger mt-3 mx-2" onClick={handleClear}>Click to Clear</button>
             </div>
             <div className="mb-3 container mt-3  ">
                 <label className={`form-label text-${props.mode==='light'?'dark':'light'}`}>{props.formOutputTitle}</label>
-                <textarea className="form-control" id="exampleFormControlTextarea1" rows="8" placeholder='Result' value={text} onChange={nochange}></textarea>
+                <textarea className="form-control copy1" id="exampleFormControlTextarea2" rows="8" placeholder='Result' value={text} onChange={nochange}></textarea>
                 <h3 className={`form-label text-${props.mode==='light'?'dark':'light'}`}>Number of characters: {text.length}</h3>
                 <h3 className={`form-label py-2 text-${props.mode==='light'?'dark':'light'}`}>Number of words: {wordCount}</h3>
             </div>

@@ -1,30 +1,50 @@
 //import logo from './logo.svg';
+//import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-// import About from './components/About';
+import Alert from './components/Alert';
 import './App.css';
 import React, { useState } from 'react'
 
 
 function App() {
 
+  
+  //Checking for Dark Mode
   const [mode, setmode] = useState('light')
-
-  const toggleMode = () => {
+  const toggleMode = () => {   
       if (mode === 'light'){
         setmode('dark');
         document.body.style.backgroundColor = "#3F4544";
-
       }else{
         setmode('light');
         document.body.style.backgroundColor = "white";
       }
   }
 
+  //Alert
+  const [alert, setalert] = useState(null)
+  const showAlert = (msg, type)=>{
+    //
+    
+      setalert({
+        msg: msg,
+        type: type
+      });
+
+      setTimeout(() => {
+        setalert(null);
+      }, 1500);
+      
+  }
+
+  //console.log(alert.type);
+
   return (
     <>
       <Navbar title="String Operations" mode={mode} toggleMode={toggleMode} />
-      <TextForm mode={mode} formInputTitle="Input Text Below" formOutputTitle="Result Below:" />
+      <Alert alert={alert}  />
+      <TextForm mode={mode} showAlert={showAlert} formInputTitle="Input Text Below" formOutputTitle="Result Below:" />
       {/* <About /> */}
     </>
   )
