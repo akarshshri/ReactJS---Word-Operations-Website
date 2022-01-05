@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   return(
   <>
-    <Navbar title="Website" />
+    <Navbar title="String Operations" />
     <TextForm formInputTitle="Input Text Below" formOutputTitle="Result Below:" />
   </>
   )

@@ -57,7 +57,7 @@ export default function TextForm(props) {
                 <textarea className="form-control" id="exampleFormControlTextarea1" rows="8" placeholder='Enter Text Here...' value={unaftext} onChange={handleonChange}></textarea>
                 <button className="btn btn-primary mt-3 mx-2" onClick={handletoUpper}>Click to UpperCase</button>
                 <button className="btn btn-primary mt-3 mx-2" onClick={handletoLower}>Click to LowerCase</button>
-                <button className="btn btn-primary mt-3 mx-2" onClick={handleClear}>Click to Clear</button>
+                <button className="btn btn-success mt-3 mx-2" onClick={handleClear}>Click to Clear</button>
             </div>
             <div className="mb-3 container mt-3">
                 <label className="form-label">{props.formOutputTitle}</label>
