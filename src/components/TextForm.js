@@ -81,7 +81,9 @@ export default function TextForm(props) {
                 <label className={`form-label text-${props.mode==='light'?'dark':'light'}`}>{props.formOutputTitle}</label>
                 <textarea className="form-control copy1" id="exampleFormControlTextarea2" rows="8" placeholder='Result' value={text} onChange={nochange}></textarea>
                 <h3 className={`form-label text-${props.mode==='light'?'dark':'light'} py-2`}>Number of characters: {text.length}</h3>
-                <h3 className={`form-label py-2 text-${props.mode==='light'?'dark':'light'}`}>Number of words: {wordCount}</h3>
+                <h3 className={`form-label  text-${props.mode==='light'?'dark':'light'}`}>Number of words: {wordCount}</h3>
+                <h3 className={`form-label py-2 text-${props.mode==='light'?'dark':'light'}`}>Read time*: {wordCount/200} minute(s)</h3>
+                <p className={`text-${props.mode==='light'?'dark':'light'}`}>*Calculation is based on the <a href="http://ezinearticles.com/?What-is-the-Average-Reading-Speed-and-the-Best-Rate-of-Reading?&amp;id=2298503">average reading speed</a> that around 200 words per minute (wpm).</p>
             </div>
         </div>
         </>
