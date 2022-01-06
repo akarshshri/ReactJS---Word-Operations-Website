@@ -54,7 +54,7 @@ export default function TextForm(props) {
         document.execCommand('copy');
         props.showAlert('Copied Successfully!','success');
         
-        console.log(props.alert);
+        //console.log(props.alert);
         
     }
     
@@ -80,7 +80,7 @@ export default function TextForm(props) {
             <div className="mb-3 container mt-3  ">
                 <label className={`form-label text-${props.mode==='light'?'dark':'light'}`}>{props.formOutputTitle}</label>
                 <textarea className="form-control copy1" id="exampleFormControlTextarea2" rows="8" placeholder='Result' value={text} onChange={nochange}></textarea>
-                <h3 className={`form-label text-${props.mode==='light'?'dark':'light'}`}>Number of characters: {text.length}</h3>
+                <h3 className={`form-label text-${props.mode==='light'?'dark':'light'} py-2`}>Number of characters: {text.length}</h3>
                 <h3 className={`form-label py-2 text-${props.mode==='light'?'dark':'light'}`}>Number of words: {wordCount}</h3>
             </div>
         </div>
