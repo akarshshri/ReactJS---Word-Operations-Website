@@ -5,8 +5,9 @@ export default function TextForm(props) {
     const [text, settext] = useState('');
     
     var unaftext, copiedtext;
-    var wordCount = text.replace(/\s{2,}/g, ' ').trim().split(" ").filter(n => n).length;
-
+    //var wordCount = text.replace(/\s{2,}/g, ' ').trim().split(" ").filter(n => n).length;
+    var wordCount = text.split(/\s+/).filter((element)=>{return element.length !==0}).length;
+    
     const handletoUpper = ()=>{
         unaftext = text;
         //console.log(unaftext);
